@@ -1,0 +1,17 @@
+{
+    "objectscript.conn": {
+        "active": true,
+        "server": "test",
+        "ns": "USER"
+    },
+    "intersystems.servers": {
+        "test":{
+            "webServer": {
+                "host": "127.0.0.1",
+                "port": 9980,
+                "scheme": "http"
+            },
+            "username": "SuperUser"
+        }
+    }
+}
