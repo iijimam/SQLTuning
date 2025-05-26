@@ -118,12 +118,20 @@ Index NameIdx On Name;
 
 管理ポータルのSQL画面で事前に実行してあった以下のSELECT文を再度実行します。
 
+前回実行したクエリ（[P5：自動で収集される統計情報の確認](#p5自動で収集される統計情報の確認)）と同じクエリを実行します。
+
+**条件値も含めて同じクエリを実行してください。**
+
+ヒント：管理ポータルのクエリ実行タブの「履歴を表示」ボタンを使用すると簡単です。
+
+例1）
 ```
 SELECT ID, Dept, EmpID, Location, Name, Tel
 FROM Training.Employee
 where Location='北海道'
 ```
-または、
+
+例2）Nameの値は、実環境の値に変更して実行してください。
 
 ```
 SELECT ID, Dept, EmpID, Location, Name, Tel
