@@ -120,6 +120,8 @@ DECLARE QRS CURSOR FOR SELECT ID , DEPT , EMPID , LOCATION , NAME , TEL FROM TRA
 ```
 から始まるプランが作成されていることが確認できます（レコード全件ループしながら結果を表示しています）。
 
+---
+
 ### P15～：インデックスデータの確認
 
 インデックス定義を追加し（コメントを外し）、インデックスデータを確認します。
@@ -217,6 +219,7 @@ WHERE Location='北海道' AND Name='xxx' のプラン例は以下の通りで�
     - Read master map Training.Employee.IDKEY, using the given idkey value.
     - Output the row.
 ```
+---
 
 ### P31：選択性
 
@@ -250,7 +253,7 @@ WHERE Location='北海道' AND Name='xxx' のプラン例は以下の通りで�
     do $SYSTEM.SQL.Stats.Table.GatherTableStats("Training.Employee")
     ```
 
-
+---
 ### P39：アダプティブモードの設定確認
 
 **※この設定は2023.1以降のバージョンで追加されました。2023.1未満のバージョンをお使いの場合は設定確認をスキップしてください。**
@@ -265,7 +268,7 @@ WHERE Location='北海道' AND Name='xxx' のプラン例は以下の通りで�
 - アップグレードした環境の場合、アップグレード前バージョンの設定を引き継ぎます。
 - 2021.1以前のバージョンから2023.1以降にアップグレードしている場合は、無効化に設定されます（チェックされています）。
 
-
+---
 ### P43～凍結プラン
 
 #### [1] 凍結を試す
@@ -362,7 +365,7 @@ where Location='北海道' AND Name ='高木'
 
 再度、同じSQL文のプラン表示を行い、**NameLocationIdx の利用から、NameIdxとLocationLdxの利用に戻れば成功です。**
 
-
+---
 ### P62～ インデックス再構築手順を確認
 
 バージョン別で確認方法を記載します。ご利用中環境のバージョンに合わせてご利用ください。
@@ -467,7 +470,9 @@ where Location='北海道'
     管理ポータルを再表示し、管理ポータルのSQL画面の左画面：Training.Employeeを選択 > 右画面：カタログの詳細を選択 > マップ/インデックス をチェックします。
 
     「ステータス」列を確認し、追加した LocationIdx が「選択可能」に変わっていることを確認します。
-    
+
+--- 
+
 #### 2022.1～2023.1までの方法
 
 ※テキストP67の内容です。
